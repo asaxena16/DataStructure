@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace DataSctructure.LinkedList
 {
@@ -49,6 +47,53 @@ namespace DataSctructure.LinkedList
                 }
             }
             return currentNode;
+        }
+
+        internal void Print(Node reversdlist)
+        {
+            while (reversdlist!=null)
+            {
+                Console.Write("Value - " + reversdlist.data + "\n");
+                reversdlist = reversdlist.nextElement;
+            }
+        }
+
+        internal Node Reverse()
+        {
+            //Node currentNode = head;
+            //Node tempNode = new Node();
+            //Node StackedNode = new Node();
+
+
+
+            //while (currentNode != null)
+            //{
+
+            //    Node tempNode = new Node
+            //    {
+            //        data = currentNode.data
+            //    };
+            //    currentNode = currentNode.nextElement;
+
+            //    //tempNode.nextElement = null;
+            //    StackedNode = tempNode;
+            //    currentNode = currentNode.nextElement;
+            //}   
+
+            //return StackedNode;
+
+            Node previous = null;
+            Node current = head;
+
+            while (current != null)
+            {
+                Node nextNode = current.nextElement;
+                current.nextElement = previous;
+                previous = current;
+                current = nextNode;
+            }
+
+            return previous;
         }
 
         public void InsertAtHead(int value)

@@ -8,19 +8,34 @@ namespace DataSctructure
             //BasicOperationonLinkedList();
 
             //FindOneByNthofLinkedList();
-            MIDDLE_OF_THE_LINKED_LIST();
+
+            LinkedList.LinkedList list =  PopulateLinkedList();
+           // MIDDLE_OF_THE_LINKED_LIST(list);
+
+            REVERSE_LINKED_LIST(list);
         }
 
-        private static void MIDDLE_OF_THE_LINKED_LIST()
+       
+
+        private static LinkedList.LinkedList PopulateLinkedList()
         {
-            #region PopulateLinkedList
             LinkedList.LinkedList list = new LinkedList.LinkedList();
-            for (int i = 0; i < 18; i++)
+            for (int i = 0; i < 3; i++)
             {
                 list.InsertAtEnd(i);
             }
-            #endregion
+            return list;
+        }
 
+        private static void REVERSE_LINKED_LIST(LinkedList.LinkedList list)
+        {
+            LinkedList.LinkedList.Node reversdlist =  list.Reverse();
+            list.Print(reversdlist);
+        }
+
+        private static void MIDDLE_OF_THE_LINKED_LIST(LinkedList.LinkedList list)
+        {
+        
             LinkedList.LinkedList.Node node = list.FindMiddle();
             Console.WriteLine("Middle of Linked List is - " + node.data);
         }
