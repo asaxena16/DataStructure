@@ -60,40 +60,22 @@ namespace DataSctructure.LinkedList
 
         internal Node Reverse()
         {
-            //Node currentNode = head;
-            //Node tempNode = new Node();
-            //Node StackedNode = new Node();
+            Node currentNode = head;
+
+            Node StackedNode = null;
 
 
 
-            //while (currentNode != null)
-            //{
-
-            //    Node tempNode = new Node
-            //    {
-            //        data = currentNode.data
-            //    };
-            //    currentNode = currentNode.nextElement;
-
-            //    //tempNode.nextElement = null;
-            //    StackedNode = tempNode;
-            //    currentNode = currentNode.nextElement;
-            //}   
-
-            //return StackedNode;
-
-            Node previous = null;
-            Node current = head;
-
-            while (current != null)
+            while (currentNode != null)
             {
-                Node nextNode = current.nextElement;
-                current.nextElement = previous;
-                previous = current;
-                current = nextNode;
+                Node tempNode = currentNode.nextElement;
+                currentNode.nextElement = StackedNode;
+                StackedNode = currentNode;
+                currentNode = tempNode;
+
             }
 
-            return previous;
+            return StackedNode;
         }
 
         public void InsertAtHead(int value)
