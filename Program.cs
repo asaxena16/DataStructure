@@ -1,49 +1,56 @@
 ﻿using System;
+using static DataSctructure.LinkedList;
+
 namespace DataSctructure
 {
     class Program
     {
         static void Main()
         {
+            LinkedList list = PopulateLinkedList();
+
             //BasicOperationonLinkedList();
-
             //FindOneByNthofLinkedList();
+            // MIDDLE_OF_THE_LINKED_LIST(list);
+            //REVERSE_LINKED_LIST(list);
 
-            LinkedList.LinkedList list =  PopulateLinkedList();
-           // MIDDLE_OF_THE_LINKED_LIST(list);
-
-            REVERSE_LINKED_LIST(list);
+            FIND_LENGTH_LL(list);
         }
 
-       
-
-        private static LinkedList.LinkedList PopulateLinkedList()
+        private static void FIND_LENGTH_LL(LinkedList list)
         {
-            LinkedList.LinkedList list = new LinkedList.LinkedList();
-            for (int i = 0; i < 3; i++)
+            list.GetLength();
+            Console.WriteLine("Length of Linked List is " + list.Length);
+        }
+
+        private static LinkedList PopulateLinkedList()
+        {
+            LinkedList list = new LinkedList();
+            for (int i = 0; i < 10; i++)
             {
                 list.InsertAtEnd(i);
             }
+            Console.WriteLine("\n");
             return list;
         }
 
-        private static void REVERSE_LINKED_LIST(LinkedList.LinkedList list)
+        private static void REVERSE_LINKED_LIST(LinkedList list)
         {
-            LinkedList.LinkedList.Node reversdlist =  list.Reverse();
+            Node reversdlist = list.Reverse();
             list.Print(reversdlist);
         }
 
-        private static void MIDDLE_OF_THE_LINKED_LIST(LinkedList.LinkedList list)
+        private static void MIDDLE_OF_THE_LINKED_LIST(LinkedList list)
         {
-        
-            LinkedList.LinkedList.Node node = list.FindMiddle();
+
+            Node node = list.FindMiddle();
             Console.WriteLine("Middle of Linked List is - " + node.data);
         }
 
         private static void FindOneByNthofLinkedList()
         {
             #region PopulateLinkedList
-            LinkedList.LinkedList list = new LinkedList.LinkedList();
+            LinkedList list = new LinkedList();
             for (int i = 0; i < 20; i++)
             {
                 list.InsertAtEnd(i);
@@ -56,7 +63,7 @@ namespace DataSctructure
 
         private static void BasicOperationonLinkedList()
         {
-            LinkedList.LinkedList list = new LinkedList.LinkedList();
+            LinkedList list = new LinkedList();
             for (int i = 0; i < 10; i++)
             {
                 if (i == 0)

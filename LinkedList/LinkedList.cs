@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DataSctructure.LinkedList
+namespace DataSctructure
 {
     public class LinkedList
     {
@@ -9,15 +9,19 @@ namespace DataSctructure.LinkedList
             internal object data;
             internal Node nextElement;
 
+
             public Node()
             {
                 nextElement = null;
+
             }
         };
         private Node head;
+        internal int Length;
         public LinkedList()
         {
             head = null;
+            Length = 0;
         }
 
         public bool IsEmpty()
@@ -30,6 +34,17 @@ namespace DataSctructure.LinkedList
             {
                 return false;
             }
+        }
+
+        internal Node GetLength()
+        {
+            Node currentnode = head;
+            while (currentnode != null)
+            {
+                Length++;
+                currentnode = currentnode.nextElement;
+            }
+            return currentnode;
         }
 
         internal Node FindMiddle()
@@ -51,7 +66,7 @@ namespace DataSctructure.LinkedList
 
         internal void Print(Node reversdlist)
         {
-            while (reversdlist!=null)
+            while (reversdlist != null)
             {
                 Console.Write("Value - " + reversdlist.data + "\n");
                 reversdlist = reversdlist.nextElement;
@@ -86,7 +101,7 @@ namespace DataSctructure.LinkedList
                 nextElement = head
             };
             head = newnode;
-            Console.WriteLine(value + " Inserted !");
+            Console.WriteLine(value + " Inserted!");
         }
         public void InsertAtEnd(int value)
         {
