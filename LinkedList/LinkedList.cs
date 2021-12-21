@@ -18,6 +18,7 @@ namespace DataSctructure
         };
         private Node head;
         internal int Length;
+
         public LinkedList()
         {
             head = null;
@@ -33,6 +34,17 @@ namespace DataSctructure
             else
             {
                 return false;
+            }
+        }
+
+        internal bool DetectLoop()
+        {
+            Node traversingNode = head;
+            Node referenceNode = new Node();
+
+            while (traversingNode != null)
+            {
+
             }
         }
 
@@ -76,10 +88,7 @@ namespace DataSctructure
         internal Node Reverse()
         {
             Node currentNode = head;
-
             Node StackedNode = null;
-
-
 
             while (currentNode != null)
             {
@@ -89,8 +98,8 @@ namespace DataSctructure
                 currentNode = tempNode;
 
             }
-
-            return StackedNode;
+            head = StackedNode;
+            return head;
         }
 
         public void InsertAtHead(int value)

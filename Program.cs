@@ -9,12 +9,24 @@ namespace DataSctructure
         {
             LinkedList list = PopulateLinkedList();
 
-            //BasicOperationonLinkedList();
-            //FindOneByNthofLinkedList();
-            // MIDDLE_OF_THE_LINKED_LIST(list);
-            //REVERSE_LINKED_LIST(list);
+            BASICOPERATIONONLINKEDLIST();
+
+            FINDONEBYNTHOFLINKEDLIST();
+
+            MIDDLE_OF_THE_LINKED_LIST(list);
+
+            REVERSE_LINKED_LIST(list);
 
             FIND_LENGTH_LL(list);
+
+            //TODO
+            //DETECT_LOOP(list);
+        }
+
+        private static void DETECT_LOOP(LinkedList list)
+        {
+            bool loopPresent = list.DetectLoop();
+            Console.WriteLine("Loop Present ? " + loopPresent);
         }
 
         private static void FIND_LENGTH_LL(LinkedList list)
@@ -47,7 +59,7 @@ namespace DataSctructure
             Console.WriteLine("Middle of Linked List is - " + node.data);
         }
 
-        private static void FindOneByNthofLinkedList()
+        private static void FINDONEBYNTHOFLINKEDLIST()
         {
             #region PopulateLinkedList
             LinkedList list = new LinkedList();
@@ -61,7 +73,7 @@ namespace DataSctructure
 
         }
 
-        private static void BasicOperationonLinkedList()
+        private static void BASICOPERATIONONLINKEDLIST()
         {
             LinkedList list = new LinkedList();
             for (int i = 0; i < 10; i++)
