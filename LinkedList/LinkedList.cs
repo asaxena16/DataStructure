@@ -46,6 +46,7 @@ namespace DataSctructure
             {
 
             }
+            return false;
         }
 
         internal Node GetLength()
@@ -76,6 +77,20 @@ namespace DataSctructure
             return currentNode;
         }
 
+        internal Node FindNth_node(int traverseTo)
+        {
+            Node currentNode = head;
+            if (traverseTo == 1)
+            {
+                return currentNode;
+            }
+            while (traverseTo > 1)
+            {
+                currentNode = currentNode.nextElement;
+                traverseTo--;
+            }
+            return currentNode;
+        }
         internal void Print(Node reversdlist)
         {
             while (reversdlist != null)

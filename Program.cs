@@ -10,13 +10,14 @@ namespace DataSctructure
             LinkedList list = PopulateLinkedList();
 
             BASICOPERATIONONLINKEDLIST();
-
-            FINDONEBYNTHOFLINKEDLIST();
+            int n = 2;
+            //TODO - DISCUSS WITH HIMANSHU
+            FINDONEBYNTHOFLINKEDLIST(n, list);
 
             MIDDLE_OF_THE_LINKED_LIST(list);
 
             REVERSE_LINKED_LIST(list);
-
+            
             FIND_LENGTH_LL(list);
 
             //TODO
@@ -59,17 +60,19 @@ namespace DataSctructure
             Console.WriteLine("Middle of Linked List is - " + node.data);
         }
 
-        private static void FINDONEBYNTHOFLINKEDLIST()
+        private static void FINDONEBYNTHOFLINKEDLIST(int n, LinkedList list)
         {
-            #region PopulateLinkedList
-            LinkedList list = new LinkedList();
-            for (int i = 0; i < 20; i++)
+            list.GetLength();
+            var traverseTo = list.Length / n;
+            if (traverseTo > 0)
             {
-                list.InsertAtEnd(i);
+                Node nthnode = list.FindNth_node(traverseTo);
+                Console.WriteLine(" Nth node is  - " + nthnode.data);
             }
-            #endregion
-
-            //FIND 1/2 OF LL
+            else
+            {
+                Console.WriteLine(" Nth Node doesnt exist !");
+            }
 
         }
 
