@@ -13,7 +13,6 @@ namespace DataSctructure
             public Node()
             {
                 nextElement = null;
-
             }
         };
         private Node head;
@@ -58,6 +57,22 @@ namespace DataSctructure
                 currentnode = currentnode.nextElement;
             }
             return currentnode;
+        }
+
+        internal Node RemoveDuplicates()
+        {
+            Node mainNode = head;
+            LinkedList returninglist = new LinkedList();
+
+            while (mainNode != null)
+            {
+                if (!returninglist.Find((int)mainNode.data))
+                {
+                    returninglist.InsertAtEnd((int)mainNode.data);
+                }
+                mainNode = mainNode.nextElement;
+            }
+            return returninglist.head;
         }
 
         internal Node FindMiddle()

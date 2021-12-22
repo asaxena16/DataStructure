@@ -17,11 +17,36 @@ namespace DataSctructure
             MIDDLE_OF_THE_LINKED_LIST(list);
 
             REVERSE_LINKED_LIST(list);
-            
+
             FIND_LENGTH_LL(list);
 
-            //TODO
-            //DETECT_LOOP(list);
+            //TODO - DISCUSS WITH HIMANSHU
+            DETECT_LOOP(list);
+
+            //TODO DISCUSS MORE OPTIMISED APPROACH - HIMANSHU
+            REMOVE_DUPLICATES();
+        }
+
+        private static void REMOVE_DUPLICATES()
+        {
+            LinkedList list = new LinkedList();
+            for (int i = 0; i < 10; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    list.InsertAtEnd(2);
+                }
+                else if (i % 3 == 0)
+                {
+                    list.InsertAtEnd(3);
+                }
+                else
+                {
+                    list.InsertAtEnd(i);
+                }
+            }
+            Node duplicatefinal = list.RemoveDuplicates();
+            list.Print(duplicatefinal);
         }
 
         private static void DETECT_LOOP(LinkedList list)
